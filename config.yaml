@@ -1,0 +1,22 @@
+# LiteLLM proxy settings for the Railway template.
+# Every key was checked against LiteLLM v1.104.1 (see VERSION_NOTES.md).
+# No secrets in this file: everything sensitive comes from environment variables.
+
+# Models are added in the admin UI (/ui) and stored in Postgres (STORE_MODEL_IN_DB=True).
+model_list: []
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: os.environ/DATABASE_URL
+  # Write spend logs to the database in batches every 60 seconds instead of on every request.
+  proxy_batch_write_at: 60
+  # Small connection pool: enough for one replica, keeps Postgres memory low.
+  database_connection_pool_limit: 10
+  # Don't store failed LLM calls in the database (keeps it small).
+  disable_error_logs: true
+
+litellm_settings:
+  set_verbose: false
+  json_logs: true
+  # Give up on a provider call after 10 minutes (LiteLLM's own default is 6000 seconds).
+  request_timeout: 600

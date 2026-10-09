@@ -1,0 +1,24 @@
+# Secrets and local environment files (never commit these)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Railway CLI local link
+.railway/
+
+# Local test data
+*.log
+pgdata/
+docker-compose.override.yml
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Personal project instructions for Claude (kept local)
+CLAUDE.md

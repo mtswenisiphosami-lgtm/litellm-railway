@@ -1,0 +1,7 @@
+# Normalise line endings in the repo; shell scripts and the Dockerfile must stay LF.
+* text=auto
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.ps1 text eol=crlf

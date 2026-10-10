@@ -62,7 +62,10 @@ release notes give the cosign verification instructions for GHCR.
       key decrypts, and the model, key and spend persist.
 - [x] 24 h idle cost measurement on Railway, 2026-10-09 to 2026-10-10: proxy 0.66 GB RAM,
       0.004 vCPU; Postgres 0.07 GB RAM, 0.2 GB volume; ≈ $7.40/month (see README.md)
-- [ ] 10/10 fresh template deploys (Phase 7)
+- [x] 10/10 fresh template deploys, 2026-10-10: each new project had both services online,
+      the Postgres volume, all variables, healthcheck passed, proxy healthy with DB
+      connected. All 10 master keys, salt keys and DB passwords were unique. On deploy 1,
+      a virtual key survived a Postgres redeploy (volume persists data).
 
 ## Sources (checked 2026-10-09)
 

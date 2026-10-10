@@ -1,6 +1,6 @@
 # LiteLLM on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/iBZabC?referralCode=HOJlTX&utm_medium=integration&utm_source=button&utm_campaign=litellm)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/litellm-1?referralCode=HOJlTX&utm_medium=integration&utm_source=button&utm_campaign=litellm)
 
 A low-cost, secure Railway template for the [LiteLLM](https://github.com/BerriAI/litellm) proxy
 (AI gateway): one OpenAI-compatible endpoint in front of OpenAI, Anthropic and 100+ other

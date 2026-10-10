@@ -54,7 +54,14 @@ release notes give the cosign verification instructions for GHCR.
       ~100 MB Postgres.
 - Note: the built-in price list in v1.104.1 does not include `claude-haiku-5-5`, but the
   proxy downloads LiteLLM's current price list at startup, which does (checked 2026-10-09).
-- [ ] Railway deploy, restart and redeploy; stored keys still decrypt (Phase 5)
+- [x] Railway deploy, 2026-10-09: project `litellm-template` (proxy + Railway Postgres 18
+      with volume, private networking). First deploy succeeded; healthcheck path
+      `/health/readiness` passes. `claude-haiku-5-5` added in the UI, virtual key with $1
+      budget, `tests/smoke-test.sh` passes. After a restart (smoke-test.sh) and a full
+      redeploy (new deployment, smoke-test.ps1) everything still passes: the stored provider
+      key decrypts, and the model, key and spend persist.
+- [x] 24 h idle cost measurement on Railway, 2026-10-09 to 2026-10-10: proxy 0.66 GB RAM,
+      0.004 vCPU; Postgres 0.07 GB RAM, 0.2 GB volume; ≈ $7.40/month (see README.md)
 - [ ] 10/10 fresh template deploys (Phase 7)
 
 ## Sources (checked 2026-10-09)
